@@ -25,13 +25,12 @@ var (
 )
 
 const (
-	HTTPLISTEN = ":8081"
-	GRPCLISTEN = ":9090"
+	HTTPLISTEN = ":8081" //http端口
+	GRPCLISTEN = ":9090" //grpc端口
 )
 
 func (m *MessageServer) Message(ctx context.Context, in *proto.MessageRequest) (*proto.MessageResponse, error) {
-	//通过传来的request中的phone和验证码查询数据库中是否一致
-	//这里写MessageService中的方法
+
 	return &proto.MessageResponse{
 		Message: "收到号码" + in.Phone,
 		Code:    "2",
